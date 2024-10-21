@@ -1,0 +1,6 @@
+rp,ENSDI-FGSM,['densenet121' 'resnet50' 'vgg19' 'wide_resnet50_2'],inception_v3,0.5070,0.0912,0.5080*,0.5080*,0.5080*,0.0924*,0.0924*,0.0924*
+rp,ENSMI-FGSM,['densenet121' 'resnet50' 'vgg19' 'wide_resnet50_2'],inception_v3,0.2766,0.0150,0.2766*,0.2766*,0.2766*,0.0150*,0.0150*,0.0150*
+rp,ENSBAP,['densenet121' 'resnet50' 'vgg19' 'wide_resnet50_2'],inception_v3,0.9078,0.4559,0.9078*,0.9078*,0.9078*,0.4559*,0.4559*,0.4559*
+rp,ENSTI-FGSM,['densenet121' 'resnet50' 'vgg19' 'wide_resnet50_2'],inception_v3,0.3697,0.0271,0.3697*,0.3697*,0.3697*,0.0271*,0.0271*,0.0271*
+rp,ENSSIT,['densenet121' 'resnet50' 'vgg19' 'wide_resnet50_2'],inception_v3,0.7004,0.2535,0.7001*,0.7001*,0.7001*,0.2553*,0.2553*,0.2553*
+rp,ENSPoincare,['densenet121' 'resnet50' 'vgg19' 'wide_resnet50_2'],inception_v3,0.4850,0.1112,0.4859*,0.4859*,0.4859*,0.1140*,0.1140*,0.1140*
