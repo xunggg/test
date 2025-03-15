@@ -21,6 +21,10 @@
 | **部署支持** | 提供ONNX/TensorRT导出接口，支持边缘设备对抗测试                          |  
 
 ## 🛠 快速开始  
+### 安装依赖
+```bash
+pip install -r requirements.txt
+
 ### 生成对抗样本（以LBAP攻击为例）
 ```python
 import torch
@@ -28,11 +32,11 @@ from model_zoo import ModelZoo
 from dataset_zoo import DatasetZoo
 from attacks.lbap import LBAP
 
-# 初始化模型与数据
+### 初始化模型与数据
 model = ModelZoo().load('resnet50').cuda().eval()
 dataset = DatasetZoo().load('imagenet_val', path='data/imagenet')
 
-# 配置LBAP攻击参数
+### 配置LBAP攻击参数
 attack = LBAP(
     model, 
     eps=16/255, 
@@ -42,17 +46,17 @@ attack = LBAP(
     random_mixup_num=6  # 随机混合样本数
 )
 
-# 对单张图像生成对抗样本
+### 对单张图像生成对抗样本
 image, label = dataset[0]
 image = image.unsqueeze(0).cuda()
 target_label = 123  # 假设目标类别为123（需根据实际攻击目标设置）
 
 adv_image = attack(image, target_label)
 
-# 保存结果
+### 保存结果
 save_image(adv_image, 'results/lbap_adv.png')
 
-# 在ImageNet验证集上测试ResNet50对LBAP攻击的鲁棒性
+### 在ImageNet验证集上测试ResNet50对LBAP攻击的鲁棒性
 python evaluate_attack.py \
   --model resnet50 \
   --attack lbap \
@@ -64,8 +68,7 @@ python evaluate_attack.py \
 
 ---
 
-### 2. **支持的攻击方法（表格细化）**
-```markdown
+
 ## 🔫 支持的攻击方法  
 | 方法名称       | 类型     | 定向攻击 | 关键参数 | 配置文件示例 |  
 |----------------|----------|----------|----------|--------------|  
