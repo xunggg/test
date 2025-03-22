@@ -5,6 +5,7 @@ import torch
 import numpy as np
 import skimage.io as io
 
+# 保存一个图像
 def save_one_img(tensor, save_path):
     # save single picture
     if len(tensor.shape) == 4:
